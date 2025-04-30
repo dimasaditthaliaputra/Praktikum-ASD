@@ -50,7 +50,7 @@ public class MahasiswaDemo06 {
                     stack.print();
                     break;
                 default:
-                    break;
+                    System.out.println("Pilihan tidak valid.");
             }
         } while (pilih >= 1 && pilih <= 4);
     }
