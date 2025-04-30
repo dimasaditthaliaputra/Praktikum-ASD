@@ -75,11 +75,26 @@ public class StackTugasMahasiswa06 {
         }
         System.out.println("");
     }
+
     public void countTasks() {
         if (!isEmpty()) {
             System.out.println("Jumlah tugas yang dikumpulkan: " + (top + 1));
         } else {
             System.out.println("Tidak ada tugas yang dikumpulkan.");
         }
-    }    
+    }
+
+    public String konversiDesimalKeBiner(int nilai) {
+        StackKonversi06 stack = new StackKonversi06();
+        while (nilai > 0) {
+            int sisa = nilai % 2;
+            stack.push(sisa);
+            nilai = nilai / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
+    }
 }
