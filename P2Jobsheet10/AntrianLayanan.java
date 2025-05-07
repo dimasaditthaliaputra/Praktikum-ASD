@@ -91,4 +91,14 @@ public class AntrianLayanan {
     public int getJumlahAntrian() {
         return size;
     }
+
+    public void lihatAkhir() {
+        if (isEmpty()) {
+            System.out.println("Antrian kosong.");
+        } else {
+            System.out.print("Mahasiswa terakhir: ");
+            System.out.println("NIM - NAMA - PRODI - KELAS");
+            data[rear].tampilkanData();
+        }
+    }
 }
