@@ -17,6 +17,18 @@ public class SLLMain06 {
         sll.insertAfter("Dirga", mhs3);
         sll.insertAt(2, mhs2);
 
+        System.out.println("data index 1 : ");
+        sll.getData(1);
+
+        System.out.println("data mahasiswa an Bimon berada pada index : " + sll.indexOf("bimon"));
+        System.out.println();
+
+        sll.removeFirst();
+        sll.removeLast();
+        sll.print();
+        sll.removeAt(0);
+        sll.print();
+
         int pilihan;
 
         do {
@@ -48,7 +60,7 @@ public class SLLMain06 {
                     sll.insertAt(index, mhsIndex);
                     break;
                 case 5:
-                    sll.printl();
+                    sll.print();
                     break;
                 case 0:
                     System.out.println("Keluar dari program...");
