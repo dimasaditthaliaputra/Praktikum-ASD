@@ -77,41 +77,35 @@ public class DoubleLinkedLists06 {
             System.out.println("Indeks tidak valid.");
             return;
         }
-
-        Node06 newNode = new Node06(data);
-
         if (index == 0) {
             addFirst(data);
             return;
         }
-
+        if (index >= size) {
+            addLast(data);
+            return;
+        }
+    
         Node06 current = head;
         int currentIndex = 0;
-
         while (current != null && currentIndex < index) {
             current = current.next;
             currentIndex++;
         }
-
-        if (current == null) {
-            addLast(data);
-        } else {
-            newNode.prev = current.prev;
-            newNode.next = current;
-
-            if (current.prev != null) {
-                current.prev.next = newNode;
-            }
-            current.prev = newNode;
-
-            if (index == 1) {
-                head.next = newNode.next;
-            }
+    
+        Node06 newNode = new Node06(data);
+    
+        newNode.prev = current.prev;
+        newNode.next = current;
+    
+        if (current.prev != null) {
+            current.prev.next = newNode;
         }
+        current.prev = newNode;
+    
         size++;
-
         System.out.println("Data berhasil ditambahkan di indeks " + index);
-    }
+    }    
 
     public void print() {
         if (isEmpty()) {
@@ -186,9 +180,8 @@ public class DoubleLinkedLists06 {
                 tail = current;
             }
             toDelete.next = toDelete.prev = null;
+            size--;
         }
-
-        size--;
     }
 
     public void remove(int index) {
@@ -196,36 +189,37 @@ public class DoubleLinkedLists06 {
             System.out.println("Indeks tidak valid atau list kosong.");
             return;
         }
-
+    
         if (index == 0) {
             removeFirst();
             return;
         }
-
+    
         Node06 current = head;
         int currentIndex = 0;
-
+    
         while (current != null && currentIndex < index) {
             current = current.next;
             currentIndex++;
         }
-
+    
         if (current == null) {
             System.out.println("Indeks di luar batas.");
         } else {
             System.out.println("Data pada indeks " + index + " berhasil dihapus:");
             current.data.tampil();
-
+    
             if (current == tail) {
                 removeLast();
             } else {
                 current.prev.next = current.next;
                 current.next.prev = current.prev;
+    
+                current.next = current.prev = null;
+                size--;
             }
-
-            current.next = current.prev = null;
         }
-    }
+    }    
 
     public Node06 search(String nim) {
         Node06 current = head;

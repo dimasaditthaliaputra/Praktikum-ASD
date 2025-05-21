@@ -9,6 +9,7 @@ public class DLLMain {
         int pilihan;
 
         do {
+            System.out.println("\nMenu Double Linked List Mahasiswa");
             System.out.println("1. Tambah di awal");
             System.out.println("2. Tambah di akhir");
             System.out.println("3. Tambah setelah NIM tertentu");
