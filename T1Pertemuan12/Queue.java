@@ -23,12 +23,12 @@ public class Queue {
         front = null;
         rear = null;
         size = 0;
-        System.out.println("Queue berhasil dikosongkan!");
+        System.out.println("Antrian berhasil dikosongkan!");
     }
 
     public void enqueue(Mahasiswa data) {
         if (isFull()) {
-            System.out.println("Queue sudah penuh!");
+            System.out.println("Antrian sudah penuh!");
             return;
         }
         Node newNode = new Node(data, null);
@@ -45,7 +45,7 @@ public class Queue {
 
     public Mahasiswa dequeue() {
         if (isEmpty()) {
-            System.out.println("Queue masih kosong!");
+            System.out.println("Tidak ada antrian");
             return null;
         }
         Mahasiswa data = front.data;
@@ -62,7 +62,7 @@ public class Queue {
             System.out.println("Antrian terdepan:");
             front.data.tampilData();
         } else {
-            System.out.println("Queue masih kosong!");
+            System.out.println("Tidak ada antrian");
         }
     }
 
@@ -71,7 +71,7 @@ public class Queue {
             System.out.println("Antrian terakhir:");
             rear.data.tampilData();
         } else {
-            System.out.println("Queue masih kosong!");
+            System.out.println("Tidak ada antrian");
         }
     }
 
@@ -88,7 +88,7 @@ public class Queue {
                 i++;
             }
         } else {
-            System.out.println("Queue masih kosong!");
+            System.out.println("Tidak ada antrian");
         }
     }
 

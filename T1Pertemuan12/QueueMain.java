@@ -2,17 +2,19 @@ import java.util.Scanner;
 
 public class QueueMain {
     public static void menu() {
-        System.out.println("\n===== Menu Layanan Unit Kemahasiswaan =====");
-        System.out.println("1. Tambah Antrian");
-        System.out.println("2. Panggil Antrian");
-        System.out.println("3. Cek Antrian Terdepan");
-        System.out.println("4. Cek Antrian Terakhir");
-        System.out.println("5. Tampilkan Semua Antrian");
-        System.out.println("6. Cek Jumlah Antrian");
-        System.out.println("7. Kosongkan Antrian");
-        System.out.println("0. Keluar");
-        System.out.println("==========================================");
-    }
+        System.out.println("\n+==== MENU LAYANAN UNIT KEMAHASISWAAN ====+");
+        System.out.println("| No | Menu                              |");
+        System.out.println("+----+-----------------------------------+");
+        System.out.println("| 1  | Tambah Antrian                    |");
+        System.out.println("| 2  | Panggil Antrian                   |");
+        System.out.println("| 3  | Cek Antrian Terdepan              |");
+        System.out.println("| 4  | Cek Antrian Terakhir              |");
+        System.out.println("| 5  | Tampilkan Semua Antrian           |");
+        System.out.println("| 6  | Cek Jumlah Antrian                |");
+        System.out.println("| 7  | Kosongkan Antrian                 |");
+        System.out.println("| 0  | Keluar                            |");
+        System.out.println("+----+-----------------------------------+");
+    }    
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -38,8 +40,12 @@ public class QueueMain {
                         String nim = sc.nextLine();
                         System.out.print("Nama  : ");
                         String nama = sc.nextLine();
+                        System.out.print("Prodi : ");
+                        String prodi = sc.nextLine();
+                        System.out.print("Kelas : ");
+                        String kelas = sc.nextLine();
                         
-                        Mahasiswa mhs = new Mahasiswa(nim, nama);
+                        Mahasiswa mhs = new Mahasiswa(nim, nama, prodi, kelas);
                         queue.enqueue(mhs);
                     } else {
                         System.out.println("Antrian sudah penuh!");
@@ -74,5 +80,6 @@ public class QueueMain {
                     System.out.println("Menu tidak valid!");
             }
         } while (pilih != 0);
+        sc.close();
     }
 }
